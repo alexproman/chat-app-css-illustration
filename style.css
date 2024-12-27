@@ -1,0 +1,409 @@
+
+
+:root {
+     /* Colors */
+
+     /* ######## Primary ######## */
+    
+     /* Text */
+    
+    --Pale-Violet : #d89eff; /*(sub-heading at the top of the app UI)*/
+    --Moderate-Violet : #9241c8; /*(chat on the left)*/
+    --Desaturated-Dark-Violet : #6e5d7e; /*(chat on the right)*/
+    --chat-right-bg: #ede5f4; 
+    --Grayish-Blue : #c6cacd; /*(placeholder text)*/
+    --Very-Dark-Desaturated-Violet : #3e2753;  /*(main heading)*/
+    --Dark-Grayish-Violet : #a39daa; /*(paragraph)*/
+     /* Gradients */
+     
+    /* These two colors are the vibrant {background colors } you see throughout the design and are applied as a linear gradient: */
+    --Light-Magenta: #e942ff;
+    --Light-Violet: #8838ff;
+    
+     /* ###### Secondary ###### */
+    
+    --White: #ffffff;
+    --Light-Grayish-Violet : #f5f3f7; /*(app background)*/
+    --Very-Dark-Desaturated-Violet : #3e2753; /*(submit button background)*/
+    --Very-Light-Magenta : #e570ff; /*(radio button outline)*/
+
+}
+/* font waights 400,500,700 */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {   
+    font-family: "Rubik", serif; 
+    font-size: 1rem;
+}
+body {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+.main-page-container {
+    position: relative;
+    width: 90rem;
+    height: 50rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center
+    
+}
+.main-page-container::before {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: -100px;
+    width: 30rem;
+    height: 43.75rem;
+    border-radius: 0 0 240px 240px;
+    background: linear-gradient(var(--Light-Magenta),var(--Moderate-Violet),var(--Light-Violet));
+    z-index: 1;
+}
+.main-page-container::after {
+    content:"";
+    position: absolute;
+    bottom: 0;
+    right: -100px;
+    width: 30rem;
+    height: 43.75rem;
+    border-radius: 240px 240px 0 0;
+    background: var(--Light-Grayish-Violet);
+    z-index: 1;
+}
+
+
+
+
+
+.content {
+    position: relative;
+    width: 51.25rem;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    gap: 7.8rem;
+}
+
+/* main-Page Text */
+.content .main-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 30px;
+
+}
+.content .main-text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--Very-Dark-Desaturated-Violet);
+}
+.content .main-text p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--Dark-Grayish-Violet);
+}
+
+
+/* Mobile Design */
+.content .mobile-design {
+    position: relative;
+    width: 15.625rem;
+    height: 31.875rem;
+    background: var(--Light-Grayish-Violet);
+    border-radius: 30px;
+    border: 8px solid var(--White);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2),20px 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.mobile-design::before {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8.125rem;
+    height: 1.875rem;
+    border-radius: 15px;
+    background: var(--White);
+    z-index: 9;
+}
+.mobile-design .mobile-nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .625rem;
+    width: 100%;
+    height: 4rem;
+    background: linear-gradient(to right, var(--Light-Violet),var(--Light-Magenta));
+}
+.mobile-design .mobile-nav .icon {
+    position: absolute;
+    bottom: 1.25rem;
+    font-size: .625rem;
+    color: var(--White);
+}
+.mobile-design .mobile-nav i.fa-angle-left{
+    left: 10px;
+}
+.mobile-design .mobile-nav i.fa-ellipsis-vertical{
+    right: .625rem;
+}
+
+.mobile-design .mobile-nav .avatar {
+    position: absolute;
+    left: 1.25rem;
+    bottom: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: .625rem;
+    color: var(--White);
+}
+.mobile-design .mobile-nav .avatar .avatart-img {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--White);
+}
+.mobile-nav .avatar-name {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+ .mobile-nav  p.name {
+    font-size: 12px;
+    line-height: 1.2;
+}
+ .mobile-nav  span.status {
+    font-size: 9px;
+    opacity: 60%;
+}
+.mobile-design .chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--Light-Grayish-Violet);
+
+    flex:1;
+    padding: 10px;
+}
+.mobile-design .chat .chat-imgs {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: end;
+    gap: 7px;
+    
+}
+.mobile-design .chat .chat-imgs img {
+    width: 2.5rem;
+    border-radius: .625rem;
+    margin: 5px 0 ;
+
+}
+.chat .text-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.chat .text-box.msg {
+    
+    justify-content: flex-start;
+}
+.chat .text-box p {
+    padding: 5px;
+    font-size: .625rem;
+    background: var(--chat-right-bg);
+}
+.chat .text-box.msg p {
+    max-width: 70%;
+    color: var(--Moderate-Violet);
+    border-radius: 12px 12px 12px 5px;
+}
+.chat .text-box.repaly {
+    width: 100%;
+    justify-content: flex-end;
+}
+.chat .text-box.repaly p {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--White);
+    max-width: 60%;
+    color: var(--Desaturated-Dark-Violet);
+    border-radius: 12px 12px 5px 12px;
+}
+
+.price-plan {
+    width: 100%;
+    display: flex;flex-direction: column;
+    justify-content: flex-start;
+    gap: 7px;
+}
+.price-plan .plan-details {
+    width: 80%;
+    background: linear-gradient(to right,var(--Light-Magenta), var(--Light-Violet));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 8px 8px 8px 4px;
+
+}
+.price-plan .plan-details div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.price-plan  .radio-btn {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.price-plan .plan-details .plan-period {
+    font-size: .625rem;
+    color: var(--White);
+    font-weight: 200;
+}
+.price-plan .plan-details span.price {
+    padding-inline: 10px;
+    color: var(--White);
+    font-size: .875rem;
+}
+.chat .input {
+    width: 100%;
+    height: 2.2rem;
+    background-color: var(--White);
+    border-radius: 1.25rem;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.chat .input .placeholder {
+    font-size: .625rem;
+    padding-left: 1.25rem;
+    color: var(--Grayish-Blue);
+}
+.chat .input .icon {
+    font-size: 1.5rem;
+    color: var(--Very-Dark-Desaturated-Violet);
+}
+
+
+
+
+
+/* Media */
+
+@media screen and (max-width:992px) {
+    .main-page-container {
+        
+        width: 23.4375rem;
+        height: 58.5rem;
+        
+    }
+    .main-page-container::before {
+       
+        top: 0;
+        left: -50%;
+        width: 100%;
+        height: 50%;
+
+    }
+    .main-page-container::after {
+      
+        bottom: 0;
+        right: -50%;
+        width: 100%;
+        height: 50%;
+    }
+    .content {
+        width: 100%;
+        gap: 3rem;
+        flex-direction: column;
+        margin:3rem  1.25rem;
+    }
+    .mobile-design {
+        margin-top: 4rem;
+       }
+       .content .main-text {
+        flex-direction: column;
+        
+        gap: 30px;
+        text-align: center;
+    
+    }
+    .content .main-text h1 {
+        font-size: 2.3rem;
+        
+    }
+    .content .main-text p {
+        
+        font-size: 1.1rem;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+.footer {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    bottom: 10px;
+}
+.attribution {
+    color: #333;
+    font-size: 12px;
+    text-align: center;
+}
+
+.attribution a {
+    color: #4c16b1;
+}
